@@ -1,0 +1,6 @@
+# OS固有ファイル
+.DS_Store
+Thumbs.db
+
+# logファイル
+*.log
