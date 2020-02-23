@@ -53,3 +53,17 @@ function custom_widget_register() {
     ) );
 }
 add_action( 'widgets_init', 'custom_widget_register');
+
+/* AMPページ用設定 */
+//フォント設定
+function my_fonts( $data ){
+    //Googleフォント syncopateの設定追加
+    $data['font_urls']['syncopate'] = 'https://fonts.googleapis.com/css?family=Syncopate:700';
+    //Font Awesome のアイコンフォントの設定を追加
+    $data['font_urls']['font-awesome'] = 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css';
+    //Googleフォントmerriweatherの設定を削除
+    unset($data['font_urls']['merriweather']);
+
+    return $data;
+}
+add_filter( 'amp_post_template_data', 'my_fonts');
