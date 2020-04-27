@@ -5,7 +5,7 @@
 Theme Name： MYPORTFOLｴO
 Author： noboru
 Description: ポートフォリオサイト
-Version：1.0.
+Version：1.0.1
 License： GNU General Public license v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0l.html
 */
@@ -17,13 +17,6 @@ html {
 	-webkit-text-size-adjust: 100%;
 	letter-spacing: 0.1em;
 }
-/* 560pxまで　14px 39.9375em */
-@media screen and (min-width: 0em) and (max-width: 39.9375em) {
-	html {
-		font-family: "Hiragino Sans W3", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic",　sans-serif;
-	}
-}
-
 * {
 	box-sizing: border-box; /*width = コンテンツの幅＋padding+border(margingは含まない）*/
 }
@@ -387,12 +380,6 @@ select {
 	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
 
-@media screen and (min-width: 0em) and (max-width: 39.9375em) {
-	select {
-		width: 100%;
-	}
-}
-
 /*  プレイスホルダーの色変更 */
 :placeholder-shown {
 	color: rgba(34, 34, 34, 0.5);
@@ -556,7 +543,7 @@ blockquote cite {
 	overflow: hidden;
 }
 
-@media screen and (min-width: 0em) and (max-width: 39.9375em) {
+@media (max-width: 640px ) {
 	.c-button {
 		min-width: 100%;
 		font-size: 16px;
@@ -627,7 +614,7 @@ blockquote cite {
 	background-size: cover;
 }
 
-@media screen and (min-width: 0em) and (max-width: 39.9375em) {
+@media (max-width: 640px ) {
 	.c-front-visual {
 		margin-top: 0vh;
 	}
@@ -643,7 +630,7 @@ blockquote cite {
 	text-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-@media screen and (min-width: 0em) and (max-width: 39.9375em) {
+@media (max-width: 640px) {
 	.c-front-visual__text {
 		font-size: 2.8571rem;
 	}
@@ -655,9 +642,8 @@ blockquote cite {
 	overflow: auto;
 }
 
-@media screen and (min-width: 0em) and (max-width: 39.9375em) {
+@media (max-width: 640px ) {
 	.c-global-nav {
-		max-width: 100%;
 		overflow: auto;
 		-webkit-overflow-scrolling: touch;
 	}
@@ -672,14 +658,15 @@ blockquote cite {
 	padding-left: 0;
 }
 
-@media screen and (min-width: 0em) and (max-width: 39.9375em) {
+@media (max-width: 640px ) {
 	.c-global-nav ul {
-		margin-left: 20vw;
+		margin-left: 0;
 	}
 }
 
 .c-global-nav ul li {
-	position: relative;
+	/*position: relative;*/
+	width:25%;
 	list-style-type: none;
 }
 
@@ -696,12 +683,14 @@ blockquote cite {
 	font-family: 'Roboto', sans-serif;
 	-webkit-transition: all ease 0.2s;
 	transition: all ease 0.2s;
-	position: relative;
+	/*position: relative;*/
 }
 
-@media screen and (min-width: 0em) and (max-width: 39.9375em) {
+@media (max-width: 640px ) {
 	.c-global-nav ul li a {
-		letter-spacing: 2.4px;
+		padding-left: 0;
+		padding-right: 0;
+		letter-spacing: 1px;
 	}
 }
 
@@ -749,7 +738,7 @@ blockquote cite {
 	transition: all ease 0.2s;
 }
 
-@media screen and (min-width: 0em) and (max-width: 39.9375em) {
+@media (max-width: 640px ) {
 	.c-logo {
 		display: -webkit-box;
 		display: flex;
@@ -776,7 +765,7 @@ blockquote cite {
 	margin-right: auto;
 }
 
-@media screen and (min-width: 0em) and (max-width: 39.9375em) {
+@media (max-width: 640px ) {
 	.c-logo__image img {
 		max-width: 16vw;
 	}
@@ -790,7 +779,7 @@ blockquote cite {
 	color: #222;
 }
 
-@media screen and (min-width: 0em) and (max-width: 39.9375em) {
+@media (max-width: 640px ) {
 	.c-logo__text {
 		font-size: 1.4286rem;
 	}
@@ -928,15 +917,34 @@ blockquote cite {
 	content: '';
 	border: 1px solid #3c98d6;
 }
-
-@media screen and (max-width: 640px) {
+@media (max-width: 640px) {
+   .post-navigation .nav-links,
+   .paging-navigation .nav-links {
+	font-size:11px;
+}
+}
+@media (max-width: 640px ) {
 	.post-navigation .nav-links a,
 	.paging-navigation .nav-links a {
 		display: block;
 		margin-left: auto;
 		margin-right: auto;
+		padding: 5px 5px;
 		margin-bottom: 24px;
-	}
+    	line-height: 1.7em;
+	    position: relative;
+      	display: inline-block;
+		max-width: 140px;
+		text-align: center;
+		text-decoration: none;
+		color: #fff;
+		background: #3c98d6;
+  }
+
+  .post-navigation .nav-links a:after,
+  .paging-navigation .nav-links a:after {
+		display: none;
+  }
 }
 
 .post-navigation a[rel='next'] {
@@ -944,7 +952,7 @@ blockquote cite {
 	text-align: center;
 }
 
-@media screen and (max-width: 640px) {
+@media (max-width: 640px ) {
 	.post-navigation a[rel='next'] {
 		float: none;
 	}
@@ -958,7 +966,7 @@ blockquote cite {
 	float: right;
 }
 
-@media screen and (max-width: 640px) {
+@media (max-width: 640px ) {
 	.paging-navigation .nav-previous {
 		float: none;
 	}
@@ -1046,7 +1054,7 @@ blockquote cite {
 	border-top: 1px solid #ccc;
 }
 
-@media screen and (min-width: 0em) and (max-width: 39.9375em) {
+@media (max-width: 640px ) {
 	.c-post-list {
 		padding-left: 0;
 		padding-right: 0;
@@ -1097,6 +1105,11 @@ table > tbody > tr > td {
 .c-widget__title {
 	margin-top: 0;
 }
+@media (min-width: 641px) and (max-width: 768px) {
+	.c-widget__title {
+		font-size: 1.75em;
+	}
+}
 
 .c-widget ul {
 	border-top: 1px solid #ccc;
@@ -1142,9 +1155,10 @@ table > tbody > tr > td {
 
 .archive-title {
 	margin-top: 0;
+	font-size: 2.8em;
 }
 
-@media screen and (min-width: 0em) and (max-width: 39.9375em) {
+@media (max-width: 640px ) {
 	.archive-title {
 		margin-bottom: 0;
 	}
@@ -1157,7 +1171,7 @@ table > tbody > tr > td {
 	margin-bottom: 3rem;
 }
 
-@media screen and (min-width: 0em) and (max-width: 39.9375em) {
+@media (max-width: 640px ) {
 	.c-post__title {
 		font-size: 2rem;
 	}
@@ -1185,7 +1199,7 @@ table > tbody > tr > td {
 	position: relative;
 }
 
-@media screen and (min-width: 0em) and (max-width: 39.9375em) {
+@media (max-width: 640px ) {
 	.c-post__content h2 {
 		font-size: 1.7143rem;
 		margin-top: 2.8571rem;
@@ -1307,7 +1321,7 @@ table > tbody > tr > td {
 	margin-right: 8px;
 }
 
-@media screen and (min-width: 0em) and (max-width: 39.9375em) {
+@media (max-width: 640px ) {
 	.l-header__tel {
 		display: none;
 	}
@@ -1317,7 +1331,7 @@ table > tbody > tr > td {
 	max-width: 180px;
 }
 
-@media screen and (min-width: 0em) and (max-width: 39.9375em) {
+@media (max-width: 640px ) {
 	.l-header__logo img {
 		max-width: 120px;
 	}
@@ -1345,7 +1359,7 @@ table > tbody > tr > td {
 	padding-bottom: 8vh;
 }
 
-@media screen and (min-width: 0em) and (max-width: 39.9375em) {
+@media (max-width: 640px ) {
 	.l-main {
 		padding: 4vw;
 	}
@@ -1363,7 +1377,7 @@ table > tbody > tr > td {
 	justify-content: space-between;
 }
 
-@media screen and (min-width: 0em) and (max-width: 39.9375em) {
+@media (max-width: 640px ) {
 	.l-container.is-flex {
 		flex-wrap: wrap; /*折り返す*/
 	}
@@ -1374,7 +1388,7 @@ table > tbody > tr > td {
 	width: 100%;
 }
 
-@media screen and (min-width: 0em) and (max-width: 39.9375em) {
+@media (max-width: 640px ) {
 	.l-contents {
 		max-width: 100%;
 	}
@@ -1385,7 +1399,7 @@ table > tbody > tr > td {
 	width: 100%;
 }
 
-@media screen and (min-width: 0em) and (max-width: 39.9375em) {
+@media (max-width: 640px ) {
 	.l-aside {
 		max-width: 100%;
 	}
@@ -1409,7 +1423,7 @@ table > tbody > tr > td {
 	border-bottom: 1px solid #ccc;
 }
 
-@media screen and (min-width: 0em) and (max-width: 39.9375em) {
+@media (max-width: 640px ) {
 	.c-post-archive .hentry {
 		flex-wrap: wrap;
 	}
@@ -1449,7 +1463,7 @@ table > tbody > tr > td {
 	flex-basis: 32%;
 }
 
-@media screen and (min-width: 0em) and (max-width: 39.9375em) {
+@media (max-width: 640px ) {
 	.c-post-archive .hentry .hentry-thumbnail {
 		flex-basis: 100%;
 		margin-bottom: 0.5714rem;
@@ -1461,7 +1475,7 @@ table > tbody > tr > td {
 	padding-left: 2.0vw;
 }
 
-@media screen and (min-width: 0em) and (max-width: 39.9375em) {
+@media (max-width: 640px ) {
 	.c-post-archive .hentry .hentry-content {
 		flex-basis: 100%;
 		padding-left: 0;
@@ -1504,7 +1518,7 @@ table > tbody > tr > td {
 	white-space: nowrap;
 }
 
-@media screen and (min-width: 0em) and (max-width: 39.9375em) {
+@media (max-width: 640px ) {
 	.wp-block-latest-posts li {
 		display: block;
 	}
